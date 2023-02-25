@@ -1,3 +1,10 @@
+$screen-mob-max: 480px;
+@mixin mob {
+    @media (max-width: #{$screen-mob-max}) {
+        @content;
+    }
+}
+
 .page{
     margin: 0 auto;
 }
@@ -5,11 +12,25 @@
 .header{
     margin: 0 auto;
     height: 249px;
+    @include mob{
+        height: 600px;
+    }
 }
 
 .header__top-menu{
     height: 50px;
     background-color: #EFEFEF;
+
+    @include mob{
+        height: 150px;
+    }
+}
+
+.header__top-menu-item{
+@include mob{
+    padding-bottom: 5px;
+    padding-left: 25px;
+}
 }
 
 .header__top-menu-container{
@@ -20,6 +41,12 @@
     padding-top: 17px;
     width: 447px;
     list-style: none;
+
+    @include mob{
+        flex-direction: column;
+        width: 100vw;
+        padding-left: 0;
+    }
 }
 
 .menu_top-item-link{
@@ -38,6 +65,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include mob{
+        flex-direction: column;
+        width: 100vw;
+        height: 250px;
+    }
 }
 
 .header-logo{
@@ -45,12 +78,20 @@
     height: 80px;
     margin: 0 auto;
     padding: 20px 20px 20px 0;
+
+    @include mob{
+        padding: 15px 0 0 0;
+    }
 }
 
 .header-logo-letter{
     width: 158px;
     height: 39px;
     padding: 41px 515px 40px 0;
+    @include mob{
+        margin: 0 auto;
+        padding: 15px 0 0 0;
+    }
 }
 
 .header-phone{
@@ -61,16 +102,26 @@
     font-weight: 400;
     font-size: 16px;
     padding: 50px 40px 50px 0;
+    @include mob{
+        padding: 15px 0 0 0;
+    }
 }
 
 .call-button{
     margin: 40px 0;
+    @include mob{
+        margin: 15px auto;
+    }
 }
 
 .header__bottom-menu{
     margin: 0 auto;
     height: 79px;
     border-top: 1px solid #EFEFEF;
+
+    @include mob{
+        height: 200px;
+    }
 }
 
 .header__bottom-menu-container{
@@ -82,6 +133,18 @@
     padding-left: 0;
     width: 675px;
     list-style: none;
+
+    @include mob{
+        flex-direction: column;
+        width: 100vw;
+    }
+}
+
+.header__bottom-menu-item{
+    @include mob{
+        padding-bottom: 6px;
+        padding-left: 25px;
+    }
 }
 
 .menu_bottom-item-link{
@@ -108,6 +171,9 @@
     margin: 0 auto;
     background-color: #66C05D;
     height: 604px;
+    @include mob{
+        height: 450px;
+    }
 }
 
 .promo__container{
@@ -116,6 +182,11 @@
     justify-content: space-between;
     width: 1110px;
     margin: 0 auto;
+
+    @include mob{
+        flex-direction: column;
+        width: 100vw;
+    }
 }
 
 .promo__text{
@@ -136,6 +207,11 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 56.25px;
+    @include mob{
+        font-size: 24px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 }
 
 .promo__subtitile{
@@ -147,6 +223,10 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
+    @include mob{
+        font-size: 12px;
+        padding-bottom: 35px;
+    }
 }
 
 .promo__button{
@@ -158,10 +238,19 @@
 .promo__image-block{
     position: relative;
     width: 859px;
+    @include mob{
+        width: 80vw;
+        height: 215px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
 }
 
 .promo__ellipse-big{
     color: #ffffff .3;
+    @include mob{
+        width: 80vw;
+    }
 }
 
 .promo__ellipse_small{
@@ -170,6 +259,12 @@
     top:0;
     right: 91px;
     color: #ffffff .4;
+
+    @include mob{
+        width: 70vw;
+        right: 18px;
+        top:-12px
+    }
 }
 
 .promo__image{
@@ -178,6 +273,11 @@
     position: absolute;
     top:20px;
     right: 137px;
+    @include mob{
+        width: 50vw;
+        height: 50vw;
+        right: 60px;
+    }
 }
 
 .offers{
@@ -193,12 +293,22 @@
     height: 61px;
     padding-top: 70px;
     margin: 0 auto;
+
+    @include mob{
+        width: 100vw;
+    }
 }
 
 .offers__truck-image{
     width: 188px;
     height: 61px;
     padding-right: 45px;
+     @include mob{
+        width: 68px;
+        height: 32px;
+        padding-right: 25px;
+    }
+    
 }
 
 .offers__title{
@@ -209,6 +319,11 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 28.13px;
+
+    @include mob{
+        font-size: 16px;
+        padding-left: 25px;
+    }
 }
 
 .offers__element-container{
@@ -219,6 +334,13 @@
     height: 363px;
     margin: 0 auto;
     padding-top: 16px;
+
+    @include mob{
+        padding-top: 10px;
+        flex-direction: column;
+        width: 80vw;
+        height: 1500px;
+    }
 }
 
 .offers__element{
@@ -228,6 +350,11 @@
     margin: 0;
     width: 255px;
     background-color: #ffffff;
+
+    @include mob{
+        margin: 0 auto;
+        padding-bottom: 25px;
+    }
 }
 
 .offers__element-image{
@@ -246,6 +373,10 @@
     font-weight: 400;
     line-height: 19.69px;
     text-align: center;
+
+    @include mob{
+        font-size: 12px;
+    }
 }
 
 .offers__element-price{
@@ -257,6 +388,10 @@
     font-weight: 500;
     font-size: 21px;
     line-height: 24.61px;
+
+    @include mob{
+        font-size: 17px;
+    }
 }
 
 .offers__element-button{
@@ -275,6 +410,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include mob{
+        padding-top:50px;
+        width: 90vw;
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
 }
 
 .offers__form{
@@ -285,6 +427,12 @@
     width: 540px;
     height: 212px;
     background-color: #66C05D;
+
+    @include mob{
+        width: 90vw;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
 }
 
 .offers__form-title{
@@ -297,6 +445,10 @@
     font-size: 17px;
     font-weight: 700;
     line-height: 21.09px;
+
+    @include mob{
+        font-size: 15px;
+    }
 }
 
 .offers__form-subtitle{
@@ -309,6 +461,10 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 19.69px;
+
+    @include mob{
+        font-size: 12px;
+    }
 }
 
 .offers__form-input{
@@ -318,6 +474,11 @@
     border-radius: 30px;
     border: 0px;
     text-decoration: #EFEFEF;
+
+    @include mob{
+        width: 205px;
+        height: 32px;
+    }
 }
 
 .offers__form-input::placeholder{
@@ -327,6 +488,9 @@
     font-size: 14px;
     font-family: Roboto;
     font-weight: 400;
+    @include mob{
+        font-size: 12px;
+    }
 }
 
 .offers__form-text{
@@ -338,6 +502,10 @@
     width: 140px;
     height: 106px;
     padding-right: 57px;
+
+    @include mob{
+        visibility: hidden;
+    }
 }
 
 .offers__form-button{
@@ -353,6 +521,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include mob{
+        width: 60vw;
+        height: 250px;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .footer__social-links{
@@ -362,11 +537,18 @@
     justify-content: space-between;
     margin: 0;
     padding: 37px 205px 38px 0;
+    @include mob{
+        width: 180px;
+        padding: 25px 0;
+    }
 }
 
 .footer__social-link{
     width: 45px;
     height: 45px;
+    @include mob{
+        width: 35px;
+    }
 }
 
 .footer__adress{
@@ -378,6 +560,12 @@
     line-height: 16.41px;
     margin: 0;
     padding: 52px 105px 52px 0;
+
+    @include mob{
+        padding: 0;
+        font-size: 12px;
+        text-align: center;
+    }
 }
 
 .footer__phone{
@@ -389,6 +577,10 @@
     line-height: 18.75px;
     margin: 0;
     padding: 50px 40px 50px 0;
+    @include mob{
+        padding: 25px 0 15px 0;
+        text-align: center;
+    }
 }
 
 .footer__bottom{
@@ -403,6 +595,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include mob{
+        width: 90vw;
+    }
 }
 
 .footer__bottom-element{
@@ -413,6 +609,10 @@
     font-size: 12px;
     line-height: 14.06px;
     color: #828282;
+    @include mob{
+        width: 240px;
+        font-size: 10px;
+    }
 }
 
 .footer__policy{
